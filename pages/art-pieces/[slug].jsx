@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import FavoriteButton from "@/components/FavoriteButton";
 
-export default function artPieceDetail({ pieces , onToggleFavorite}) {
+export default function ArtPieceDetail({ pieces , onToggleFavorite}) {
   const router = useRouter();
   const { slug } = router.query;
   const artPiece = pieces.find((artpiece) => artpiece.slug === slug);

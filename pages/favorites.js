@@ -3,7 +3,7 @@ import ArtPieces from "@/components/ArtPieces";
 export default function favorite({pieces, isFavorite, onToggleFavorite, artPiecesInfo}) {
   const favoriteList = pieces.filter((artPiece) =>
     artPiecesInfo.find(
-      (arepicesInfo) => arepicesInfo.slug === artPiece.slug && arepicesInfo.isFavorite
+      (artpicesInfo) => artpicesInfo.slug === artPiece.slug && artpicesInfo.isFavorite
     )
   );
   return (
