@@ -5,11 +5,11 @@ import classes from "./ArtPiecePreview.module.css";
 
 
 export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
-
+console.log(pieces);
   return (
     <ul className={classes.ul}>
       {pieces?.map((artPiece) => {
-        // return (
+        return (
           <div key={artPiece.slug} className={classes.div}>
             <ArtPiecePreview
               artist={artPiece.artist}
@@ -20,10 +20,10 @@ export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
                 artPiecesInfo?.find((artPiece) => artPiece.slug === date.slug)
                   ?.isFavorite
               }
-              onToggleFavorite={() => onToggleFavorite(piece.slug)}
+              onToggleFavorite={onToggleFavorite}
             />
           </div>
-        // );
+        );
       })}
     </ul>
   );

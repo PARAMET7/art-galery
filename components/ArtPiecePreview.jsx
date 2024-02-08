@@ -12,6 +12,7 @@ export function ArtPiecePreview({
   onToggleFavorite
 }) {
   return (
+    <>
     <Link href={`/art-pieces/${slug}`}>
       <Card withBorder padding="lg" className={classes.card}>
         <Card.Section>
@@ -21,15 +22,18 @@ export function ArtPiecePreview({
         <Group justify="space-between" mt="xl">
           <Text fz="sm" fw={700} className={classes.title}>
             {title}
-            <FavoriteButton isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} />
+
           </Text>
           <Group gap={5}>
             <Text fz="sm" fw={700}>
               {artist}
             </Text>
           </Group>
+
         </Group>
       </Card>
     </Link>
+    <FavoriteButton isFavorite={isFavorite} onToggleFavorite={() => onToggleFavorite(slug)} />
+    </>
   );
 }

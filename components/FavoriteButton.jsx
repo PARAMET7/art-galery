@@ -6,6 +6,7 @@ const StyledButton = styled.button`
   position: relative;
   top: 10;
   right: 0;
+  padding: 10px;
   background: inherit;
   border: none;
   cursor: pointer;

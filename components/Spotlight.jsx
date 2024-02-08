@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import FavoriteButton from "@/components/FavoriteButton.jsx";
 
-export default function Spotlight({ randomArtPiece, image, name,onToggleFavorite, isFavorite }) {
+export default function Spotlight({ randomArtPiece, image, artist,onToggleFavorite, isFavorite }) {
   return (
     <div className="art-piece">
       <p>{randomArtPiece.artist}</p>
