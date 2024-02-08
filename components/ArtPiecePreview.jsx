@@ -9,6 +9,7 @@ export function ArtPiecePreview({
   artist,
   slug,
   isFavorite,
+  onToggleFavorite
 }) {
   return (
     <Link href={`/art-pieces/${slug}`}>
@@ -20,7 +21,7 @@ export function ArtPiecePreview({
         <Group justify="space-between" mt="xl">
           <Text fz="sm" fw={700} className={classes.title}>
             {title}
-            <FavoriteButton isFavorite={isFavorite} />
+            <FavoriteButton isFavorite={isFavorite} onToggleFavorite={onToggleFavorite} />
           </Text>
           <Group gap={5}>
             <Text fz="sm" fw={700}>

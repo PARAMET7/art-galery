@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-export default function artPieceDetail({ data }) {
-  const artPieceDetails = data[ArtPieceDetails];
+export default function artPieceDetail({ pieces }) {
+  const artPieceDetails = pieces[ArtPieceDetails];
 
   return (
     <>

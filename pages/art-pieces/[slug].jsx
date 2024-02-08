@@ -1,13 +1,12 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
-import ArtPieceDetails from "@/components/ArtPieceDetails";
 import FavoriteButton from "@/components/FavoriteButton";
 
-export default function artPieceDetail({ data }) {
+export default function artPieceDetail({ pieces , onToggleFavorite}) {
   const router = useRouter();
   const { slug } = router.query;
-  const artPiece = data.find((artpiece) => artpiece.slug === slug);
-  console.log("============", artPiece);
+  const artPiece = pieces.find((artpiece) => artpiece.slug === slug);
+  console.log("============>", artPiece);
 
   return (
     <>
@@ -25,7 +24,7 @@ export default function artPieceDetail({ data }) {
         <button type="back-button" onClick={() => router.back()}>
           Back to Main
         </button>
-        <FavoriteButton />
+        <FavoriteButton onToggleFavorite={onToggleFavorite}/>
       </div>
     </>
   );

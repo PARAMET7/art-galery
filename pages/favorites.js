@@ -1,12 +1,13 @@
-import Image from "next/image";
-import isFavorite from "@/components/FavoriteButton";
+import ArtPieces from "@/components/ArtPieces";
 
-export default function favorite() {
+export default function favorite({isFavorite, onToggleFavorite}) {
   return (
     <>
       <h1>Your Favourite Pieces</h1>
-
-      <button isFavorite={isFavorite} />
+    <ArtPieces
+      isFavorite={isFavorite}
+      onToggleFavorite={onToggleFavorite}
+      />
     </>
   );
 }
