@@ -19,7 +19,7 @@ const fetcher = (url) => fetch(url).then((response) => response.json());
 
 export default function App({ Component, pageProps }) {
   const { data, error, isLoading } = useSWR(API_URL, fetcher);
-  const [artPiecesInfo, setArtPiecesInfo] = useImmerLocalStorageState(
+  const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState(
     "art-pieces-info",
     { defaultValue: [] }
   );
@@ -27,27 +27,7 @@ export default function App({ Component, pageProps }) {
   if (isLoading) return <h1>Loading...</h1>;
   if (error) return <h1>Error...</h1>;
 
-  // toggle favorite button
-  // function handleToggleFavorite(slug) {
-  //   setArtPiecesInfo((prevArtPiecesInfo) => {
-  //     const existingPieceIndex = prevArtPiecesInfo.findIndex(
-  //       (piece) => piece.slug === slug
-  //     );
-
-  //     if (existingPieceIndex !== -1) {
-  //       // Art piece found, update its isFavorite property
-  //       return prevArtPiecesInfo.map((piece, index) =>
-  //         index === existingPieceIndex
-  //           ? { ...piece, isFavorite: !piece.isFavorite }
-  //           : piece
-  //       );
-  //     } else {
-  //       // Art piece not found, add a new one
-  //       return [...prevArtPiecesInfo, { slug, isFavorite: true }];
-  //     }
-  //   });
-  // }
-  // console.log("========>",handleToggleFavorite);
+  
 
   function handleToggleFavorite(slug) {
     const artPiece = artPiecesInfo.find((piece) => piece.slug === slug);
@@ -97,6 +77,7 @@ console.log(artPiecesInfo);
           onToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
           addComment={addComment}
+
         />
       </MantineProvider>
     </Layout>

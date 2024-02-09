@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import CommentForm from "../CommentForm/index.js";
 
-export default function ArtPieceDetails({ pieces }) {
+export default function ArtPieceDetails({ pieces, addComment, }) {
   return (
     <div>
       {pieces.map((pieces) => (
@@ -17,6 +18,7 @@ export default function ArtPieceDetails({ pieces }) {
               alt="Image of the art piece"
             />
           </div>
+          <CommentForm addComment={addComment} />
         </li>
       ))}
     </div>

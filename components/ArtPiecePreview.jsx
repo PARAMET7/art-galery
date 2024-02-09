@@ -11,6 +11,7 @@ export function ArtPiecePreview({
   isFavorite,
   onToggleFavorite
 }) {
+  console.log('isfavorite==',isFavorite);
   return (
     <>
     <Link href={`/art-pieces/${slug}`}>

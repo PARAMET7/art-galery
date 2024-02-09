@@ -15,7 +15,7 @@ export default function HomePage({ pieces, artPiecesInfo, onToggleFavorite }) {
       <h3>Other garbage:</h3>
 
       <div>
-        <ArtPieces pieces={pieces} onToggleFavorite={onToggleFavorite}/>
+        <ArtPieces artPiecesInfo={artPiecesInfo} pieces={pieces} onToggleFavorite={onToggleFavorite}/>
 
       </div>
     </div>

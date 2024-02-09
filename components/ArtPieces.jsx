@@ -5,20 +5,20 @@ import classes from "./ArtPiecePreview.module.css";
 
 
 export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
-console.log(pieces);
+// console.log(pieces);
+console.log('artpieces::::::',artPiecesInfo);
   return (
     <ul className={classes.ul}>
-      {pieces?.map((artPiece) => {
+      {pieces?.map((piece) => {
         return (
-          <div key={artPiece.slug} className={classes.div}>
+          <div key={piece.slug} className={classes.div}>
             <ArtPiecePreview
-              artist={artPiece.artist}
-              title={artPiece.name}
-              image={artPiece.imageSource}
-              slug={artPiece.slug}
+              artist={piece.artist}
+              title={piece.name}
+              image={piece.imageSource}
+              slug={piece.slug}
               isFavorite={
-                artPiecesInfo?.find((artPiece) => artPiece.slug === date.slug)
-                  ?.isFavorite
+                artPiecesInfo?.find((artPieceInfo) => artPieceInfo.slug === piece.slug)?.isFavorite
               }
               onToggleFavorite={onToggleFavorite}
             />

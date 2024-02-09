@@ -13,7 +13,7 @@ export default function favorite({pieces, isFavorite, onToggleFavorite, artPiece
       isFavorite={isFavorite}
       onToggleFavorite={onToggleFavorite}
       pieces={favoriteList}
-
+      artPiecesInfo={artPiecesInfo}
       />
     </>
   );
